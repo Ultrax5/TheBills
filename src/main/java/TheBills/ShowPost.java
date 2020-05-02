@@ -3,7 +3,6 @@ package TheBills;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
-import java.util.concurrent.Flow;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -47,6 +46,7 @@ public class ShowPost extends JPanel implements ActionListener{
         this.add(title);
         this.add(text);
         this.add(downPanel);
+        read.addActionListener(this);
     }
     public void actionPerformed(ActionEvent u){
         if(u.getSource()==user){
@@ -59,7 +59,8 @@ public class ShowPost extends JPanel implements ActionListener{
             //otworz subreddit
         }
         else{
-            //przeczytaj wiadomosc byczku
+            TTSHelper.dospeak(text.getText());
+            System.out.println("Dupa elo");
         }
     }
 

@@ -16,11 +16,6 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
         RedditConnect.setUp();
-        TTSHelper.resolveText("DUPA");
-        List<Post> dupa = RedditHelper.getPosts("RocketLeague");
-        for (Post post : dupa) {
-            System.out.println(post);
-        }
         Window XD = new Window();
 
     }
