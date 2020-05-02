@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class LoginUI implements ActionListener  {
 
-    private JFrame loginFrame = new JFrame("Twooter");
+    private JFrame loginFrame = new JFrame("Reddit Browser");
     private JPanel mainPanel = new JPanel();
     private JPanel logoPanel = new JPanel();
     private JPanel loginPanel = new JPanel();
@@ -24,6 +24,7 @@ public class LoginUI implements ActionListener  {
     private JButton continueButton;
     private JPasswordField passwordText = new JPasswordField(15);
     private JTextField loginText = new JTextField(15);//
+    private LoginController loginController;
 
 
     public LoginUI(){
@@ -63,10 +64,23 @@ public class LoginUI implements ActionListener  {
         mainPanel.setOpaque(true);
         loginFrame.pack();
         loginFrame.setVisible(true);
+        loginController = LoginController.getInstance();
     }
 
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==loginButton){
+            String username = loginText.getText();
+            String password = passwordText.getPassword().toString();
+
+            try{
+                boolean result = loginController.login(username, password);
+            }
+            catch(FailedLoginException ex){
+                ex.printStackTrace();
+            }
+
+
+
         }
         else if(e.getSource()==continueButton){
             loginFrame.dispose();
