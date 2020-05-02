@@ -19,8 +19,6 @@ public class RedditConnect {
         NetworkAdapter adapter = new OkHttpNetworkAdapter(userAgent);
         // Authenticate and get a RedditClient instance
         reddit = OAuthHelper.automatic(adapter, creds);
-        Subreddit sr = reddit.subreddit("RocketLeague").about();
-        System.out.println(sr.toString());
         return true;
     }
 
