@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class LoginUI implements ActionListener  {
 
-    private JFrame loginFrame = new JFrame("Twooter");
+    private JFrame loginFrame = new JFrame("Reddit Browser");
     private JPanel mainPanel = new JPanel();
     private JPanel logoPanel = new JPanel();
     private JPanel loginPanel = new JPanel();
