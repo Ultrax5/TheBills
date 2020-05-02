@@ -34,11 +34,6 @@ public class RedditHelper {
             postList.add(p);
         }
         return postList;
-        // Subreddit sr = cli.subreddit("RocketLeague").about();
-
-
-        // p.setSyntax(SubmissionSearchPaginator.SearchSyntax.CLOUDSEARCH);
-        // Listing<Submission> submissions = p.next();
     }
     public static List<String> getCommentsForPost(String id){
         RootCommentNode root = RedditConnect.getInstance().submission(id).comments();

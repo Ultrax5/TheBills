@@ -9,7 +9,9 @@ import java.util.List;
 import javax.swing.*;
 
 import TheBills.ShowPost;
-
+/**
+ * Class used to show and scroll through posts
+ */
 public class Window extends JFrame implements ActionListener{
     
     private JPanel panel= new JPanel();
@@ -20,14 +22,22 @@ public class Window extends JFrame implements ActionListener{
     private JButton prev= new JButton("Previous post");
     private ArrayList<ShowPost> posts= new ArrayList<ShowPost>();
     private int curPos=0;
+    private JTextField input;
+    private String subReddit;
 
     public Window(){
         super("The Bills Reddit");
-        List<Post> postsEntity = RedditHelper.getPosts("RocketLeague");
-        for (int i = 0; i < 10; i++) {
+        List<Post> postsEntity = RedditHelper.getPosts("lancasteruni");
+        int j=0;
+        if(postsEntity.size()>30){
+            j=30;
+        }
+        else{
+            j= postsEntity.size();
+        }
+        for (int i = 0; i < j; i++) {
             posts.add(new ShowPost(postsEntity.get(i)));
         }
-        System.out.println("XD");
         next.addActionListener(this);
         prev.addActionListener(this);
         this.setContentPane(panel);
