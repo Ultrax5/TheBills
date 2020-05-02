@@ -1,12 +1,9 @@
 package TheBills;
 
 
-import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
-import TheBills.LoginUI;
 
 public class Window implements ActionListener{
     private JFrame frame= new JFrame("The Bills Reddit");
