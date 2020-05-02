@@ -27,7 +27,7 @@ public class ShowPost extends JPanel implements ActionListener{
         this.add(read);
 
     }
-    public actionPerformed(ActionEvent u){
+    public void actionPerformed(ActionEvent u){
         if(u.getSource()==user){
             //otworz profil usera
         }
