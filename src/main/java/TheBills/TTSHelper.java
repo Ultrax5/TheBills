@@ -11,6 +11,9 @@ import javax.speech.synthesis.SynthesizerModeDesc;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.Voice;
 
+/**
+ * Class to handle TTS feature
+ */
 public class TTSHelper {
 
     public static void dospeak(String speak)

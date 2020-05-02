@@ -2,6 +2,9 @@ package TheBills;
 
 import java.util.List;
 
+/**\
+ *  Model class for post
+ */
 public class Post {
     private String user;
     private String text;

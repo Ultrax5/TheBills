@@ -25,6 +25,7 @@ public class Window extends JFrame implements ActionListener{
     private JTextField input;
     private String subReddit;
 
+
     public Window(){
         super("The Bills Reddit");
         List<Post> postsEntity = RedditHelper.getPosts("lancasteruni");
@@ -79,7 +80,6 @@ public class Window extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent u){
         if(u.getSource()==next){
-            System.out.println("XD "+ curPos);
             curPos++;
             curPost=posts.get(curPos);
             draw();

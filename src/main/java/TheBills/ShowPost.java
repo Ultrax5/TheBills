@@ -15,13 +15,19 @@ import TheBills.TTSHelper;
 public class ShowPost extends JPanel implements ActionListener{
     private JLabel user= new JLabel();
     private JLabel like= new JLabel();
-    private JLabel title = new JLabel();
+    private JTextArea title = new JTextArea();
     private JLabel subreddit= new JLabel();
     private JButton read= new JButton("Read it for me!");
-    private JLabel text = new JLabel();
+    private JTextArea text = new JTextArea();
     private JPanel downPanel = new JPanel();
 
     public ShowPost(Post post){
+        title.setLineWrap(true);
+        title.setWrapStyleWord(true);
+        text.setLineWrap(true);
+        text.setWrapStyleWord(true);
+        title.setEditable(false);
+        text.setEditable(false);
         user.setText(post.getUser());
         user.setFont(new Font("Serif", Font.BOLD, 35));
         subreddit.setFont(new Font("Serif", Font.BOLD, 35));
@@ -33,9 +39,10 @@ public class ShowPost extends JPanel implements ActionListener{
         subreddit.setText("r/" + post.getSub());
         like.setText(post.getScore()+ " likes");
         text.setText(post.getText());
-        if(text.getText()==null){
-            text.setText("Dupska");
+        if(text.getText().equals("")){
+            text.setText("No text found");
         }
+        JScrollPane scrollText = new JScrollPane(text);
         read.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.setBorder(BorderFactory.createTitledBorder("Post"));
         downPanel.setLayout(new FlowLayout());
@@ -49,7 +56,7 @@ public class ShowPost extends JPanel implements ActionListener{
         read.addActionListener(this);
         this.setLayout(new GridLayout(3, 1));
         this.add(title);
-        this.add(text);
+        this.add(scrollText);
         this.add(downPanel);
     }
     

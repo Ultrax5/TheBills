@@ -10,6 +10,9 @@ import net.dean.jraw.oauth.OAuthHelper;
 
 import java.util.UUID;
 
+/**
+ * Class to set up reddit connection
+ */
 public class RedditConnect {
     private static UserAgent userAgent = new UserAgent("bot", "com.example.usefulbot", "v6.9", "TheBills");
     private static RedditClient reddit;

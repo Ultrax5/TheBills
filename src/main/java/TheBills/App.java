@@ -7,6 +7,9 @@ import java.util.List;
 import net.dean.jraw.RedditClient;
 import net.dean.jraw.http.UserAgent;
 
+/**
+ * Main application class
+ */
 public class App {
     public static void main(String[] args) {
         RedditConnect.setUp();

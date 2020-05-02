@@ -11,6 +11,9 @@ import net.dean.jraw.pagination.*;
 import net.dean.jraw.tree.CommentNode;
 import net.dean.jraw.tree.RootCommentNode;
 
+/**
+ * Class with method to get reddit posts from subreddit
+ */
 public class RedditHelper {
     public static List<Post> getPosts(String subreddit){
         List<Post> postList = new ArrayList<>();
