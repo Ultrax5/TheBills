@@ -37,7 +37,6 @@ public class Window implements ActionListener{
         }
         else if(u.getSource()==logout){
             frame.dispose();
-            LoginUI log= new LoginUI();
         }
         
     }
