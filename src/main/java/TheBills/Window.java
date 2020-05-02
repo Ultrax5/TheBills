@@ -11,10 +11,11 @@ import javax.swing.*;
 public class Window implements ActionListener{
     private JFrame frame= new JFrame("The Bills Reddit");
     private JPanel panel= new JPanel();
-    private JButton login= new JButton("Sign in");
+    private String name= "";
+    private JLabel greeting= new JLabel();
     public Window(){
-        panel.add(login);
-        login.addActionListener(this);
+        greeting.setText("Hello, "+name);
+        panel.add(greeting);
         frame.setContentPane(panel);
         frame.setSize(1000,800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
@@ -24,9 +25,5 @@ public class Window implements ActionListener{
     }
     public void actionPerformed(ActionEvent u){
         
-        if(u.getSource()==login){
-            LoginUI log= new LoginUI();
-
-        }
     }
 }
