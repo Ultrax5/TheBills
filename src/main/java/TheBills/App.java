@@ -8,6 +8,7 @@ import net.dean.jraw.http.UserAgent;
 
 public class App {
     public String getGreeting() {
+        Window XD= new Window();
         return "Hello world.";
     }
 
