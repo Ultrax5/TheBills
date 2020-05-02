@@ -14,6 +14,6 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
         RedditConnect.setUp(null, null);
-        LoginUI log= new LoginUI();
+        Window XD= new Window();
     }
 }
