@@ -5,6 +5,7 @@ package TheBills;
 
 public class App {
     public String getGreeting() {
+        Window XD= new Window();
         return "Hello world.";
     }
 
