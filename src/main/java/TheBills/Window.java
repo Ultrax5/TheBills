@@ -4,6 +4,7 @@ package TheBills;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 
@@ -22,8 +23,9 @@ public class Window extends JFrame implements ActionListener{
 
     public Window(){
         super("The Bills Reddit");
+        List<Post> postsEntity = RedditHelper.getPosts("RocketLeague");
         for (int i = 0; i < 10; i++) {
-            posts.add(new ShowPost(i+""));
+            posts.add(new ShowPost(postsEntity.get(i)));
         }
         System.out.println("XD");
         next.addActionListener(this);
