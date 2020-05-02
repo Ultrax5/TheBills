@@ -28,6 +28,9 @@ public class Window extends JFrame implements ActionListener{
     public Window(){
         super("The Bills Reddit");
         List<Post> postsEntity = RedditHelper.getPosts("lancasteruni");
+        for(Post post: postsEntity){
+            System.out.println(post.toString());
+        }
         int j=0;
         if(postsEntity.size()>30){
             j=30;

@@ -54,7 +54,7 @@ public class ShowPost extends JPanel implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent u){
-        TTSHelper.resolveText("quick");
+        TTSHelper.dospeak("quick");
     }
 
 

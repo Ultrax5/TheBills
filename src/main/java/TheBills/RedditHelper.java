@@ -21,7 +21,7 @@ public class RedditHelper {
             p.setTitle(s.getTitle());
             p.setUser(s.getAuthor());
             p.setScore(s.getScore());
-            p.setText(s.getBody());
+            p.setText(s.getSelfText());
             p.setId(s.getId());
             p.setUrl(s.getUrl());
             p.setSub(s.getSubreddit());
