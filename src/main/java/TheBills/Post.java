@@ -1,16 +1,46 @@
 package TheBills;
 
-import javax.imageio.ImageIO;
+import java.util.List;
 
 public class Post {
     private String user;
     private String text;
-    private int downvotes;
+    private int score;
     private String title;
     private String id;
     private String url;
+    private String sub;
+    private List<String> comments;
+    private boolean finishedLoading=false;
+    
     Post(){
-
+    }
+    public boolean isLoadingFinished() {
+        return finishedLoading;
+    }
+    /**
+     * @param url the url to set
+     */
+    public void setLoading(boolean loading) {
+        finishedLoading = loading;
+    }
+    public List<String> getComments() {
+        return comments;
+    }
+    /**
+     * @param url the url to set
+     */
+    public void setComments(List<String> comments) {
+        this.comments = comments;
+    }
+    public String getSub() {
+        return sub;
+    }
+    /**
+     * @param url the url to set
+     */
+    public void setSub(String sub) {
+        this.sub = sub;
     }
     /**
      * @return the url
@@ -51,8 +81,8 @@ public class Post {
     /**
      * @return the downvotes
      */
-    public int getDownvotes() {
-        return downvotes;
+    public int getScore() {
+        return score;
     }
     /**
      * @return the text
@@ -68,8 +98,8 @@ public class Post {
     /**
      * @param downvotes the downvotes to set
      */
-    public void setDownvotes(int downvotes) {
-        this.downvotes = downvotes;
+    public void setScore(int downvotes) {
+        this.score = downvotes;
     }
     /**
      * @param text the text to set
@@ -89,7 +119,7 @@ public class Post {
                 "author: "+user+"\n"+
                 "text: "+text+"\n"+
                 "title: "+title+"\n"+
-                "score: "+downvotes+"\n"+
+                "score: "+score+"\n"+
                 "url: "+url+"\n";
     }
 
