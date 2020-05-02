@@ -9,8 +9,8 @@ import net.dean.jraw.oauth.Credentials;
 import net.dean.jraw.oauth.OAuthHelper;
 
 public class RedditConnect {
-    public static UserAgent userAgent = new UserAgent("bot", "com.example.usefulbot", "v6.9", "TheBills");
-    public static RedditClient reddit;
+    private static UserAgent userAgent = new UserAgent("bot", "com.example.usefulbot", "v6.9", "TheBills");
+    private static RedditClient reddit;
     public static boolean setUp(String username, String password){
         //"TheBillsV69", "$6qn2vzBFprWV8s"
         Credentials credentials = null;
@@ -32,7 +32,8 @@ public class RedditConnect {
         // This is what really sends HTTP requests
         
     }
-
-
+    public static RedditClient getInstance(){
+            return reddit;
+    }
 
 }
