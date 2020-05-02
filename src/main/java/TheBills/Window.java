@@ -3,6 +3,8 @@ package TheBills;
 
 import java.awt.event.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
 
 public class Window implements ActionListener{
@@ -15,10 +17,12 @@ public class Window implements ActionListener{
     private JButton next= new JButton("Next post");
     private JButton logout= new JButton("Log out");
 
-    private ShowPost[] posts;
     public Window(){
         //dodaj wszystkie posty do arraya posts
+        List<Post> posts = RedditHelper.getPosts("Story");
+        ShowPost showPost = new ShowPost(posts.get(0));
         panel.setLayout(layout);
+        panel.add(showPost);
         //dodaj post do panelu
         greeting.setText("Hello, "+name);
         panel.add(greeting);
@@ -40,4 +44,5 @@ public class Window implements ActionListener{
         }
         
     }
+
 }

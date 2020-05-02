@@ -15,15 +15,13 @@ public class RedditConnect {
     private static RedditClient reddit;
     public static boolean setUp(){
         //"TheBillsV69", "$6qn2vzBFprWV8s"
-        Credentials creds = Credentials.userless("18zdrx3lzdrbZw", "vEd1p_OuAF03vHKZIxXuutaUQus", UUID.randomUUID() );
+        Credentials creds = Credentials.userless("18zdrx3lzdrbZw", "vEd1p_OuAF03vHKZIxXuutaUQus", UUID.randomUUID());
         NetworkAdapter adapter = new OkHttpNetworkAdapter(userAgent);
         // Authenticate and get a RedditClient instance
         reddit = OAuthHelper.automatic(adapter, creds);
         Subreddit sr = reddit.subreddit("RocketLeague").about();
         System.out.println(sr.toString());
         return true;
-        // This is what really sends HTTP requests
-        
     }
 
     public static RedditClient getInstance(){
