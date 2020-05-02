@@ -11,9 +11,9 @@ public class ShowPost extends JPanel implements ActionListener{
     private JButton comments= new JButton();
     private JButton subreddit= new JButton();
     private JButton read= new JButton("Read it for me!");
-    private String text= "";
+    private String text= "XDDD";
 
-    public ShowPost(){
+    public ShowPost(String x){
         user.setText("Posted by: ");//+username, +godzina
         subreddit.setText("r/");//+sub
         like.setText(420+ " likes");//liczba lajkow
@@ -21,7 +21,7 @@ public class ShowPost extends JPanel implements ActionListener{
 
         this.add(user);
         this.add(subreddit);
-        this.add(new JLabel(text));
+        this.add(new JLabel(text+ x));
         this.add(like);
         this.add(comments);
         this.add(read);
