@@ -9,6 +9,7 @@
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
+    id 'java-library'
 
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
@@ -17,6 +18,10 @@ plugins {
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+    mavenCentral()
     jcenter()
 }
 
@@ -28,6 +33,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 	implementation 'net.dean.jraw:JRAW:1.1.0'
     implementation 'com.google.cloud:google-cloud-speech:1.23.0'
+    implementation group: 'net.sf.sociaal', name: 'freetts', version: '1.2.2'
+    implementation group: 'org.jvoicexml', name: 'cmu_us_kal', version: '1.2.3-SNAPSHOT'
+    implementation group: 'org.jvoicexml', name: 'cmu_time_awb', version: '1.2.3-SNAPSHOT'
 }
 
 application {
