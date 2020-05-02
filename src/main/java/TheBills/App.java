@@ -3,6 +3,9 @@
  */
 package TheBills;
 
+import net.dean.jraw.RedditClient;
+import net.dean.jraw.http.UserAgent;
+
 public class App {
     public String getGreeting() {
         Window XD= new Window();
@@ -11,5 +14,6 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        LoginUI loginUI = new LoginUI();
     }
 }
